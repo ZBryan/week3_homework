@@ -41,6 +41,9 @@ end
 # TODO #1
 # make tests run by default
 # running 'rake' should run your tests
+desc "default test"
+task :default => [:test] 
+
 
 # TODO #2
 # 1. add a method that you write to this rakefile

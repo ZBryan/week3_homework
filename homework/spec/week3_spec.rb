@@ -1,6 +1,8 @@
 $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
 require 'week3'
 
+A_CONSTANT = "I'm a CONSTANT"
+
 describe 'Variable type' do
 
   # TODO: Figure out where to set these (but NOT inside each test)
@@ -37,21 +39,21 @@ describe 'Week3 method' do
   it '#halve returns first half of an array' do
     input = [1,2,3,4]
     expected = [1,2]
-    actual = subject.halve input
+    actual = subject.halve_1 input
     actual.should eq expected
   end
 
   it '#halve does not modify input parameter' do
     input = [1,2,3,4]
     expected = [1,2,3,4]
-    subject.halve input
+    subject.halve_2 input
     input.should eq expected
   end
 
   it '#halve! returns first half of an array' do
     input = [1,2,3,4]
     expected = [1,2]
-    actual = subject.halve input
+    actual = subject.halve_bang_1 input
     actual.should eq expected
   end
 
@@ -60,7 +62,7 @@ describe 'Week3 method' do
   it '#halve! does modify input parameter' do
     input = [1,2,3,4]
     expected = [1,2]
-    subject.halve! input
+    subject.halve_bang_2 input
     input.should eq expected
   end
 
@@ -69,7 +71,7 @@ describe 'Week3 method' do
   end
 
   it '#even? works as expected when passed a string' do
-    subject.even?('2').should eq true
+    subject.even_s('2').should eq true
   end
 
   it '#even? returns false if parameter is odd' do
@@ -97,9 +99,16 @@ describe 'Week3 method' do
     #
     # challenge: write the tests first
     #
-    it 'returns defaults when no parameter is provided'
+    it 'returns defaults when no parameter is provided' do
+      #expected = {:path => './'
+      #            :version => '0.1.0'
+      #            :mode => 'production'}
+      #actual = subject.configure
+      #actual.should eq expected            
+    end
 
-    it 'returns default value when :path is missing from parameter'
+    it 'returns default value when :path is missing from parameter' 
+
 
     it 'returns overridden value when :version is included in the parameter'
 
