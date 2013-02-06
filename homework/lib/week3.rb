@@ -36,43 +36,37 @@ class Week3
   end
 
   #halve! returns first half of an array
-  def halve_bang_1
-  	input[0, input.length/2]
-  end
-  
-  #halve! does modify input parameter
-  def halve_bang_2 input
-  	input.slice![0, input.length/2]
+  def halve_bang_1 input
+  	input.slice!(0, input.count/2)
   end
 
+  #halve! returns first half of an array
+  def halve! input
+    input.slice!(input.count/2..input.count)
+  end
+  
   #even? returns true if parameter is even
   def even? num
-    num % 2 == 0
+    num.to_i % 2 == 0
   end
   
   #even? works as expected when passed a string
-  def even_s num
-    num.to_i % 2 == 0	
-  end
-
-  #even? returns false if parameter is odd
-  def even_o num
-  	num % 2 != 0
-  end	
-  
-  #returns defaults when no parameter is provided
-  #def configure var={ }
-  	#{ path: './'
-      #version: '0.1.0'
-      #mode: 'production' }.merge(var)
+  #def even_s num
+  #  num.to_i % 2 == 0	
   #end
 
-  #returns default value when :path is missing from parameter
-  def default_2
-  end
+  #even? returns false if parameter is odd
+  def odd? num
+  	num % 2 != 0
+  end		
   
-  #returns overridden value when :version is included in the parameter
-  def override  	
+  #returns defaults when no parameter is provided
+  def configure var={}
+  	{path: './', version: '0.1.0', mode: 'production'}.merge(var)
+  end
+
+  def run_me &block
+  	yield
   end
 
 

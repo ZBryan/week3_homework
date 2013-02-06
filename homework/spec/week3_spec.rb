@@ -62,7 +62,7 @@ describe 'Week3 method' do
   it '#halve! does modify input parameter' do
     input = [1,2,3,4]
     expected = [1,2]
-    subject.halve_bang_2 input
+    subject.halve! input
     input.should eq expected
   end
 
@@ -71,7 +71,7 @@ describe 'Week3 method' do
   end
 
   it '#even? works as expected when passed a string' do
-    subject.even_s('2').should eq true
+    subject.even?('2').should eq true
   end
 
   it '#even? returns false if parameter is odd' do
@@ -100,17 +100,26 @@ describe 'Week3 method' do
     # challenge: write the tests first
     #
     it 'returns defaults when no parameter is provided' do
-      #expected = {:path => './'
-      #            :version => '0.1.0'
-      #            :mode => 'production'}
-      #actual = subject.configure
-      #actual.should eq expected            
+      expected = {:path => './',
+                   :version => '0.1.0',
+                   :mode => 'production'}
+      actual = subject.configure expected
+      actual.should eq expected            
     end
 
-    it 'returns default value when :path is missing from parameter' 
+    it 'returns default value when :path is missing from parameter' do
+      expected = {path: './', version: '0.1.0', mode: 'production'}
+      input = {version: '0.1.0', mode: 'production'}
+      actual = subject.configure
+      actual.should eq expected
+    end
 
-
-    it 'returns overridden value when :version is included in the parameter'
+    it 'returns overridden value when :version is included in the parameter' do
+      input = {path: './', version: '5.1.0', mode: 'production'}
+      expected = {path: './', version: '5.1.0', mode: 'production'}
+      actual = subject.configure input
+      actual.should eq expected
+    end  
 
   end
 end

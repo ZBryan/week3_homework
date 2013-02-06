@@ -6,7 +6,9 @@ describe 'Week3 block method' do
   subject{ Week3.new }
 
   # TODO: Write the spec and the code
-  it '#run_me yields to a block'
+  it '#run_me yields to a block' do 
+    subject.run_me {2 + 2}.should eq 4
+  end  
 
   # TODO: Write the spec and the code
   # method should take one parameter, an array of integers.
@@ -16,7 +18,9 @@ describe 'Week3 block method' do
   # method is an iterator, like #each, that goes through each item
   #   in the array passed in.
   # block can be the second parameter, or implicit.
-  it '#each_odd iterates an array and yields the odd values to the block'
+  it '#each_odd iterates an array and yields the odd values to the block' do
+    subject.odd?(9).should eq true 
+  end  
 
 end
 
