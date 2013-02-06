@@ -48,3 +48,10 @@ task :default => [:test]
 # TODO #2
 # 1. add a method that you write to this rakefile
 # 2. write a rake task that uses the method and prints something using puts
+def sleepy #sleepy not a reference to test, but to state of mind while working on this
+  only_files.count
+end  	
+
+desc "execute sleepy method test"
+task :new do
+end	
