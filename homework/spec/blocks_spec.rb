@@ -19,7 +19,10 @@ describe 'Week3 block method' do
   #   in the array passed in.
   # block can be the second parameter, or implicit.
   it '#each_odd iterates an array and yields the odd values to the block' do
-    subject.odd?(9).should eq true 
+    input = [1,2,3,4]
+    expected = [1,3]
+    actual = subject.each_odd input
+    actual.should eq expected
   end  
 
 end

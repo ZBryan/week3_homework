@@ -39,21 +39,21 @@ describe 'Week3 method' do
   it '#halve returns first half of an array' do
     input = [1,2,3,4]
     expected = [1,2]
-    actual = subject.halve_1 input
+    actual = subject.halve input
     actual.should eq expected
   end
 
   it '#halve does not modify input parameter' do
     input = [1,2,3,4]
     expected = [1,2,3,4]
-    subject.halve_2 input
+    subject.halve input
     input.should eq expected
   end
 
   it '#halve! returns first half of an array' do
     input = [1,2,3,4]
     expected = [1,2]
-    actual = subject.halve_bang_1 input
+    actual = subject.halve! input
     actual.should eq expected
   end
 

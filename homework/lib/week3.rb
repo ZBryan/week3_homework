@@ -26,23 +26,24 @@ class Week3
   end
   
   #halve returns first half of an array'
-  def halve_1 input
-  	input[0, input.length/2]
+  def halve input
+  	input[0...input.count/2]
   end
   
   #halve does not modify input parameter'
-  def halve_2 input
-    input
-  end
+  #def halve_2 input
+  #  input
+  #end
 
   #halve! returns first half of an array
-  def halve_bang_1 input
-  	input.slice!(0, input.count/2)
-  end
+  #def halve_bang_1 input
+  #	input.slice!(0, input.count/2)
+  #end
 
   #halve! returns first half of an array
   def halve! input
     input.slice!(input.count/2..input.count)
+    input
   end
   
   #even? returns true if parameter is even
@@ -56,8 +57,8 @@ class Week3
   #end
 
   #even? returns false if parameter is odd
-  def odd? num
-  	num % 2 != 0
+  def each_odd num
+  	num.select {|x| x % 2 != 0} 
   end		
   
   #returns defaults when no parameter is provided
